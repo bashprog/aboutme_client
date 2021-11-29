@@ -1,0 +1,115 @@
+$floating-effect-duration: 1s
+
+.social-container
+  width: 100px
+
+.social-container__hashtag
+  position: relative
+  width: 60px
+  height: 60px
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  box-sizing: content-box
+  padding: 20px
+  &>span
+    height: 3px
+    width: 65px
+    background: red
+    display: block
+    transform: skew(-15deg)
+    transition: .3s all
+    border-radius: 2px
+    &:nth-child(1)
+      transform: translate(0, -10px) skew(-15deg)
+    &:nth-child(2)
+      transform: rotate(95deg) translate(6px, 16px) skew(-15deg)
+    &:nth-child(3)
+      transform: translate(-3px, 18px) skew(-15deg)
+    &:nth-child(4)
+      transform: rotate(95deg) translate(-3px, -14px) skew(-15deg)
+  &:hover>span
+    background: black
+    width: 120px
+    &:nth-child(1)
+      transform: rotate(45deg) translate(8px, 2px)
+    &:nth-child(2)
+      transform: rotate(45deg) translate(6px, 0)
+    &:nth-child(3)
+      transform: rotate(135deg) translate(-2px, -3px)
+    &:nth-child(4)
+      transform: rotate(135deg) translate(-4px, -1px)
+  &:hover .triangle
+    opacity: 1
+  &:hover .triangle i
+    transform: translate(0, 0) !important
+  .triangle
+    pointer-events: auto
+    position: absolute
+    font-size: 30px
+    opacity: 0
+    transition: .3s
+    @media (max-width: 840px)
+      pointer-events: none
+    i
+      transition: .3s all
+    a
+      color: black
+      &:visited
+        color: black
+    &.triangle-top
+      top: 7px
+      left: 38px
+      i
+        transform: translate(0px, -15px)
+        &:hover
+          color: #0088cc
+    &.triangle-right
+      top: 33px
+      right: 5px
+      i
+        transform: translate(15px, 0px)
+        &:hover
+          color: #25d366
+    &.triangle-bottom
+      bottom: 0
+      left: 39px
+      i
+        transform: translate(0px, 15px)
+        &:hover
+          color: #ea4335
+    &.triangle-left
+      top: 35px
+      left: 9px
+      i
+        transform: translate(-15px, 0px)
+
+.social-text
+  margin: 0
+  font-size: 50px
+  color: white
+  background: black
+  max-width: 0px
+  max-height: 75px
+  overflow: hidden
+  transition: $floating-effect-duration all
+  display: flex
+  white-space: nowrap
+  position: relative
+
+.social-text.visible
+  padding: 0 5px
+  max-width: 360px
+  user-select: none
+
+#social-fixed-top
+  position: fixed
+  top: -105px
+  left: 10px
+  transition: .3s
+  z-index: 1000
+  &.visible
+    top: 5px
+
+

@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 
 import './main.sass';
 
-import TestComponent from "./components/TestComponent/TestComponent";
+//Components
+import HashTag from "./components/HashTag/HashTag";
 
 const App: React.FC = () => {
     return (
         <>
-            <TestComponent/>
+            <HashTag/>
         </>
     )
 };
