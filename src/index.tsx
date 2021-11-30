@@ -6,10 +6,14 @@ import './main.sass';
 //Components
 import HashTag from "./components/HashTag/HashTag";
 
+//Containers
+import BurgerContainer from "./containers/BurgerContainer";
+
 const App: React.FC = () => {
     return (
         <>
             <HashTag/>
+            <BurgerContainer/>
         </>
     )
 };
