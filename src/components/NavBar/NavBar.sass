@@ -1,0 +1,25 @@
+@import "../../var.sass"
+$transition-duration: 1s
+
+.s-navbar
+  position: fixed
+  top: 0
+  right: -300px
+  width: 300px
+  height: 100vh
+  display: flex
+  align-items: center
+  background: $gray
+  transition: $transition-duration ease-out right
+  &.opened
+    right: 0
+  ul li
+    margin: 5px 10px
+    padding: 10px
+    cursor: pointer
+    font-size: 22px
+    transition: .3s all
+    color: $dark
+    &:hover
+      padding-left: 25px
+      color: $light

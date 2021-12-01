@@ -7,13 +7,13 @@ import './main.sass';
 import HashTag from "./components/HashTag/HashTag";
 
 //Containers
-import BurgerContainer from "./containers/BurgerContainer";
+import NavBarContainer from "./containers/NavBarContainer";
 
 const App: React.FC = () => {
     return (
         <>
             <HashTag/>
-            <BurgerContainer/>
+            <NavBarContainer/>
         </>
     )
 };
