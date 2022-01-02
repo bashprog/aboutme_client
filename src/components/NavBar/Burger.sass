@@ -1,0 +1,131 @@
+@import "../../var.sass"
+
+$burger-color: $dark
+
+.burger
+  position: fixed
+  width: 68px
+  height: 68px
+  cursor: pointer
+  z-index: 100
+  top: 20px
+  right: 20px
+  svg
+    position: absolute
+    width: 68px
+    height: 68px
+
+.burger-icon
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 60%
+  height: 60%
+  margin: 20%
+  overflow: hidden
+  position: absolute
+  span
+    display: block
+    width: 36px
+    height: 4px
+    background: $burger-color
+    margin: 3px
+    border-radius: 2px
+  .middle-line
+    transition: .9s
+  .top-line, .bottom-line
+    transform-origin: 100% 50%
+
+.burger.open
+  .mask path
+    stroke-dasharray: 62
+    stroke-dashoffset: -62
+    animation: mask-opening .5s linear
+  .svg-ring path
+    stroke-dasharray: 202
+    stroke-dashoffset: 202
+    animation: ring-opening .5s linear forwards
+    animation-delay: .25s
+  .middle-line
+    transform: translate(72px, 0)
+  .top-line
+    animation: top-line-opening .4s linear forwards
+  .bottom-line
+    animation: bottom-line-opening .4s linear forwards
+
+.burger.close
+  .mask path
+    stroke-dasharray: 62
+    stroke-dashoffset: -62
+    animation: mask-closing .6s linear
+    animation-delay: .2s
+  .svg-ring path
+    stroke-dasharray: 202
+    stroke-dashoffset: 202
+    animation: ring-closing .5s linear forwards
+  .middle-line
+    transition: .7s
+    transition-delay: .3s
+  .top-line
+    transform: rotate(-45deg) translate(-1px,-5px)
+    animation: top-line-ending .4s .3s linear forwards
+  .bottom-line
+    transform: rotate(45deg) translate(-1px,5px)
+    animation: bottom-line-ending .4s .3s linear forwards
+
+@keyframes ring-opening
+  0%
+    stroke-dashoffset: 202
+  100%
+    stroke-dashoffset: 0
+
+@keyframes ring-closing
+  0%
+    stroke-dashoffset: 0
+  100%
+    stroke-dashoffset: 202
+
+@keyframes mask-opening
+  0%
+    stroke-dashoffset: -62
+  100%
+    stroke-dashoffset: 62
+
+@keyframes mask-closing
+  0%
+    stroke-dashoffset: 62
+  100%
+    stroke-dashoffset: -62
+
+@keyframes top-line-opening
+  0%
+    transform: rotate(0deg) translate(0,0)
+  40%
+    transform: rotate(15deg) translate(0,0)
+  100%
+    transform: rotate(-45deg) translate(-1px,-5px)
+
+@keyframes bottom-line-opening
+  0%
+    transform: rotate(0deg) translate(0,0)
+  40%
+    transform: rotate(-15deg) translate(0,0)
+  100%
+    transform: rotate(45deg) translate(-1px,5px)
+
+@keyframes top-line-ending
+  0%
+    transform: rotate(-45deg) translate(-1px,-5px)
+  60%
+    transform: rotate(15deg) translate(0,0)
+  100%
+    transform: rotate(0deg) translate(0,0)
+
+@keyframes bottom-line-ending
+  0%
+    transform: rotate(45deg) translate(-1px,5px)
+  60%
+    transform: rotate(-15deg) translate(0,0)
+  100%
+    transform: rotate(0deg) translate(0,0)
