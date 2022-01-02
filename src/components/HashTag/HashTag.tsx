@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 //Work by Onton (bashprog@gmail.com)
 //GNU kk?
 
+=======
+>>>>>>> b7f18d36a3479a41a5e7b5e881afb7eda692a9fd
 import React from "react";
 
 import './HashTag.sass';
